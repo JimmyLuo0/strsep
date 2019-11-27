@@ -9,7 +9,7 @@ char ** parse_args(char * line){
 	int i = 0;
 	while(curr){
 		tokens[i] = strsep(&curr, " ");
-		printf("[%s]\n", tokens[i]);		
+		printf("tokens:[%s]\n", tokens[i]);		
 		i++;
 	}
 	return tokens;
@@ -17,7 +17,7 @@ char ** parse_args(char * line){
 int main(){
 	char line[100] = "ls -a -l";
 	char **args = parse_args(line);
-	printf("[%s]\n", args[0]);
+	printf("testing using ls -a -l\n");
 	execvp(args[0], args);
 	return 0;
 }
